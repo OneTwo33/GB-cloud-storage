@@ -1,4 +1,4 @@
-package ru.onetwo33.netty;
+package ru.onetwo33.netty.handlers;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
@@ -18,7 +18,6 @@ public class ByteBufInputHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         ByteBuf buf = (ByteBuf) msg;
-        System.out.println("buf: " + buf);
         StringBuilder sb = new StringBuilder();
         while (buf.isReadable()) {
             sb.append((char) buf.readByte());
